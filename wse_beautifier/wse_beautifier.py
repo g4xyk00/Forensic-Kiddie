@@ -7,12 +7,10 @@ import re
 import os
 
 #Display Configuration
-
 os.system('color F0')
 
 filePath = sys.argv[1]
 file = open(filePath)
-
 eventID = []
 scanEventID = ['4624', '4647', '4648', '4688', '4798', '4799']
 
@@ -97,15 +95,6 @@ def displayDetail(eid, line):
 		process = enhanceRegexValue(getRegexValue(line, regexDict['CallerProcessName']))
 		print "%-35s%-20s%-20s%-20s%-40s" % (time, computer, subject, target, process)
 
-
-
-
-
-
-
-
-
-
 print "="*155
 print " __    __ _           _                     __                      _ _             __                 _       ___                  _   _  __ _           "
 print "/ / /\ \ (_)_ __   __| | _____      _____  / _\ ___  ___ _   _ _ __(_) |_ _   _    /__\_   _____ _ __ | |_    / __\ ___  __ _ _   _| |_(_)/ _(_) ___ _ __ "
@@ -132,7 +121,6 @@ for line in file:
 			file = open(match + ".txt","a") 
 		
 		file.write(line) 
-
 
 for eid in scanEventID:
 	try:
@@ -168,5 +156,3 @@ for eid in scanEventID:
 	except:
 		pass
 		
-
-
